@@ -12,7 +12,7 @@ body {
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
-  text-align: center;
+  /* text-align: left; */
 }
 .form-signin .checkbox {
   font-weight: normal;

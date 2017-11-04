@@ -8,7 +8,7 @@ CEULP ULBRA
 	$servidor = "localhost";
 	$usuario = "root";
 	$senha = "";
-	$dbname = "ling.formais";
+	$dbname = "linguagem_natural";
 	
 	//Criar a conexao
 	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
