@@ -68,14 +68,17 @@ CEULP ULBRA
 												var conversas = fileReader.result;
 												//fileContents.innerText = conversas;
 												//var er =/(oi, eu sou o|sou o |(\w+))(. Gostaria de|queria (\w+)) (sobre o (\w+).)/i;
-												/*var er =/Oi, eu sou [oa] |Eu sou o |Sou o |(\w+)/gi;
-												var str = conversas.replace(er,"$1");
-												str = str+"\n"+conversas.replace(er,"$2");
-												str = str+"\n"+conversas.replace(er,"$3");
-												str = str+"\n"+conversas.replace(er,"$4");
-												str = str+"\n"+conversas.replace(er,"$5");
-												str = str+"\n"+conversas.replace(er,"$6");*/
-												var regex = /([Oo]i, eu sou [oa] |[eE]u sou [ao] |[Ss]ou [oa] |(\w+))|(. Gostaria de | e quero |(\w+))|( sobre o | sobre |(\w+))/g; 
+												var er_nome =/Oi, eu sou [oa] |Eu sou o |Sou o |(\w+)/i;
+												var er_acao =/. Gostaria de | e quero |(\w+)/i;
+												var str="";
+												//str = conversas.replace(er_nome,"$1").split(" ")[0];
+												str = str+"\n"+conversas.replace(er_acao,"$1").split(" ")[0];
+												str = str+"\n"+conversas.replace(er_nome,"$3");
+												str = str+"\n"+conversas.replace(er_nome,"$4");
+												str = str+"\n"+conversas.replace(er_nome,"$5");
+												str = str+"\n"+conversas.replace(er_nome,"$6");
+												fileContents.innerText = str;
+												/*var regex = /([Oo]i, eu sou [oa] |[eE]u sou [ao] |[Ss]ou [oa] |(\w+))|(. Gostaria de | e quero |(\w+))|( sobre o | sobre |(\w+))/g; 
 												var input = "your input string"; 
 												var info="";
 												var str = conversas.replace(er,"$1");
@@ -87,7 +90,7 @@ CEULP ULBRA
 												else {
 												info=info+"\n "+"No matches found!";
 												}
-												fileContents.innerText = str +"\n info: "+ info;
+												fileContents.innerText = "teste"; //str +"\n info: "+ info;*/
 											}
 											fileReader.readAsText(fileTobeRead);
 										}
