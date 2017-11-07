@@ -5,16 +5,14 @@ CEULP ULBRA
 */
 
 //Lendo arquivo
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-	// acima verificamos se navegador suporta o arquivo
-    var input = document.getElementById('file');
-    input.onchange = function() {
-        var file = this.files[0];
-        var reader = new FileReader();
-        reader.onload = function(e) {  // chamar a função da ER ps. verificar como faz
-            
-        }
-    }
-} else {
-    alert('Arquivo não suportado no navegador');
+function ler(e){
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var contents = e.target.result;
+    };
+    reader.readAsText(file);
+    
 }
+document.getElementById('arquivo')
+.addEventListener('change', ler, false);

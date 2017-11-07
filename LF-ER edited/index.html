@@ -14,13 +14,13 @@ CEULP ULBRA
     <title>E.R.</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
-	<style type="text/css">
-    </style>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
+
 <body>
     <nav class="navbar navbar-dark bg-dark justify-content-between">
         <a class="navbar-brand" style="color: #eb9316">Seja Bem Vindo!</a>
@@ -37,91 +37,38 @@ CEULP ULBRA
     </div>
 	<div class="row" >
         <div class="container" >
-		<form method="POST" action="imprime.php">
             <div class="col-md-12">
-			<br></br>
-				<div class="col-md-6">
-					<!-- <button class="btn btn-lg btn-primary btn-block" type="submit">teste conexao</button> -->
-					<input type="file" id="arquivo" />
-					<h2>Conteúdo do arquivo:</h2>
-					<div id="filecontents"></div>
-						<script>
-							window.onload = function () {
-								//Check the support for the File API support
-								if (window.File && window.FileReader && window.FileList && window.Blob) {
-									var fileSelected = document.getElementById('arquivo');
-									fileSelected.addEventListener('change', function (e) 
-									{
-										//Set the extension for the file
-										var fileExtension = /text.*/;
-										//Get the file object
-										var fileTobeRead = fileSelected.files[0];
-										//Check of the extension match
-										if (fileTobeRead.type.match(fileExtension)) {
-											//Initialize the FileReader object to read the 2file
-											var fileReader = new FileReader();
-											fileReader.onload = function (e) {
-												var fileContents = document.getElementById('filecontents');
-												//fileContents.innerText = fileReader.result;
-												//var conversas = fileReader.result.split("\n");   1
-												//fileContents.innerText = conversas[1];           1
-												var conversas = fileReader.result;
-												//fileContents.innerText = conversas;
-												//var er =/(oi, eu sou o|sou o |(\w+))(. Gostaria de|queria (\w+)) (sobre o (\w+).)/i;
-												/*var er =/Oi, eu sou [oa] |Eu sou o |Sou o |(\w+)/gi;
-												var str = conversas.replace(er,"$1");
-												str = str+"\n"+conversas.replace(er,"$2");
-												str = str+"\n"+conversas.replace(er,"$3");
-												str = str+"\n"+conversas.replace(er,"$4");
-												str = str+"\n"+conversas.replace(er,"$5");
-												str = str+"\n"+conversas.replace(er,"$6");*/
-												var regex = /([Oo]i, eu sou [oa] |[eE]u sou [ao] |[Ss]ou [oa] |(\w+))|(. Gostaria de | e quero |(\w+))|( sobre o | sobre |(\w+))/g; 
-												var input = "your input string"; 
-												var info="";
-												var str = conversas.replace(er,"$1");
-												if(regex.test(input){
-												var matches = input.match(regex);
-												for(var match in matches) {
-												info = info+": "+matches[match];} 
-												}
-												else {
-												info=info+"\n "+"No matches found!";
-												}
-												fileContents.innerText = str +"\n info: "+ info;
-											}
-											fileReader.readAsText(fileTobeRead);
-										}
-										else {
-											alert("Por favor selecione arquivo texto");
-										}
-								}, false);
-								}
-								else {
-									alert("Arquivo(s) não suportado(s)");
-								}
-							}
-						</script>		
-				</div>
-				<div class="col-md-6">  <!--segunda parte/ mostrar os resultados. -->
-
-				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-10">
+					<div>
+						<!-- primeira linha p escrever o que necessita -->
+						<form class="form-signin" method="POST" action="imprime.php">
+						
+						<button class="btn btn-lg btn-primary btn-block" type="submit">teste conexao</button>
+						
+						</form>
+						
+					</div>
+                </div>
             </div>
-			</form>
         </div>
     </div>
 	</br></br>
-	<!-- <div class="row" > 
+	<div class="row" >
         <div class="container" >
             <div class="col-md-12">
 			   <div class="col-md-2"></div>
 				<div class="col-md-10">
 					<div>
+						<!-- Segunda linha p escrever o que necessita -->
 						<p>segunda linha </p>
+						
 					</div>
 				</div>
             </div>
         </div>
-    </div> -->
+    </div>
+	
 	<script src="js/app.js"></script>	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
